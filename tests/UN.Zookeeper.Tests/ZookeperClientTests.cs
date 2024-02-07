@@ -1,14 +1,9 @@
 ﻿using org.apache.zookeeper;
+using Rabbit.Zookeeper;
 using Rabbit.Zookeeper.Implementation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
 
-namespace Rabbit.Zookeeper.Tests
+namespace UN.Zookeeper.Tests
 {
     public class ZookeeperClientTests
     {
@@ -180,30 +175,6 @@ namespace Rabbit.Zookeeper.Tests
                     await _client.DeleteRecursiveAsync(path);
             }
         }
-
-        /*        [Fact]
-                public async Task ReconnectionDataChangeTest()
-                {
-                    var path = $"/{DateTime.Now:yyyy_MM_dd_HH_mm_ss_ff}";
-
-                    if (await _client.ExistsAsync(path))
-                        await _client.DeleteRecursiveAsync(path);
-
-                    await _client.CreateEphemeralAsync(path, null);
-
-                    var isChange = false;
-
-                    await _client.SubscribeDataChange(path, (client, args) =>
-                    {
-                        if (args.Type == NodeListenerType.DataChanged)
-                            isChange = true;
-                        return Task.CompletedTask;
-                    });
-
-                    await Task.Delay(TimeSpan.FromSeconds(15));
-
-                    Assert.True(isChange);
-                }*/
 
         [Fact]
         public async Task UnSubscribeTest()

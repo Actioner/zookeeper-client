@@ -93,3 +93,5 @@ In the event trigger parameter will have a type "EventType" attribute "Type", th
 Officially provided components, only provide the basic api, in the normal use of the zk needs to do very complicated things, breed a lot of additional code and can not guarantee the correctness of its implementation.
 
 In the java language also has the official zk package package ZKClient, the current component is also a reference to this project. What are the specific packages that are available? Please refer to the section "Features Provided".
+
+Updated target .Net 8 and dependencies
